@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/events")
-public class PublishEventController {
+public class EventController {
 
     private final String EXCHANGE_NAME = "kudospoints.exchange"; // Central mail sorting room
     private final String ROUTING_KEY = "transactions.completed"; // Pin code to PO Box (event)
     private final RabbitTemplate rabbitTemplate;
 
-    public PublishEventController(RabbitTemplate rabbitTemplate) {
+    public EventController(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
